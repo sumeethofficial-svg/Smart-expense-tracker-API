@@ -1,8 +1,3 @@
-"""Smart Expense Tracker API.
-
-Run with:
-    uvicorn src.main:app --reload
-"""
 from __future__ import annotations
 
 import os
@@ -36,7 +31,6 @@ def list_expenses(
         default=None, description="Filter results to this category (case-insensitive)"
     )
 ) -> list[Expense]:
-    """Return all expenses, optionally filtered by category."""
     return store.list_all(category=category)
 
 
@@ -47,11 +41,6 @@ def get_total(
         description="If provided, only totals for this category are included",
     )
 ) -> TotalResponse:
-    """Return the overall total, plus a breakdown by category.
-
-    If `category` is supplied, `total` is scoped to that category, while
-    `by_category` still shows the full breakdown for context.
-    """
     return TotalResponse(
         total=store.total(category=category),
         by_category=store.totals_by_category(),
