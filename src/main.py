@@ -47,7 +47,7 @@ def get_total(
     )
 
 
-@app.delete("/expenses/{expense_id}", status_code=204)
+@app.delete("/expenses/{expense_id}", status_code=204, response_model=None)
 def delete_expense(expense_id: int) -> None:
     """Delete an expense by id. 404s if it doesn't exist."""
     deleted = store.delete(expense_id)
