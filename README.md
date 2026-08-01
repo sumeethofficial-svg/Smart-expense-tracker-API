@@ -33,7 +33,7 @@ uvicorn src.main:app --reload
 ```
 
 The API is then available at `http://127.0.0.1:8000` (docs at
-`http://127.0.0.1:8000/docs`).
+`http://127.0.0.1:8000/docs`), add /docs after getting the primary url 
 
 Data is persisted to `expenses.json` in the working directory by default.
 To use a different file (e.g. to keep a scratch file out of the repo),
