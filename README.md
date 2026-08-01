@@ -32,8 +32,12 @@ pip install -r requirements.txt
 uvicorn src.main:app --reload
 ```
 
-The API is then available at `http://127.0.0.1:8000` (docs at
-`http://127.0.0.1:8000/docs`), add /docs after getting the primary url 
+## The API is then available at (MOST IMP PART)
+
+```bash
+`http://127.0.0.1:8000`
+(docs at`http://127.0.0.1:8000/docs`), add /docs after getting the primary url 
+```
 
 Data is persisted to `expenses.json` in the working directory by default.
 To use a different file (e.g. to keep a scratch file out of the repo),
@@ -84,8 +88,6 @@ curl -X DELETE http://127.0.0.1:8000/expenses/1
 - **Validation**: Pydantic enforces `amount > 0`, non-blank `title`/
   `category`, and a real `date` value at the API boundary, so bad input
   is rejected with a `422` before it ever reaches storage.
-- **Category filtering** is case-insensitive (`Food` and `food` match)
-  since that's how a human would expect it to behave.
 - **Test isolation**: the FastAPI app builds its `ExpenseStore` at
   import time, pointed at `EXPENSES_DATA_FILE`. The test fixture sets
   that env var to a fresh `tmp_path` file and re-imports the app for
