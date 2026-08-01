@@ -24,7 +24,7 @@ server is running.
 pip install -r requirements.txt
 ```
 
-(If you prefer a virtual environment: `python3 -m venv .venv && source .venv/bin/activate` before the `pip install`.)
+(If you prefer a virtual environment: `python -m venv .venv && source .venv/bin/Activate.ps1` before the `pip install`.)
 
 ## Run the server
 
